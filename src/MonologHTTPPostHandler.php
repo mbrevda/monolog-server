@@ -1,6 +1,6 @@
 <?php
 
-namespace Mbrevda\LogServer;
+namespace Mbrevda\MonologServer;
 
 use Monolog\Logger;
 use Monolog\Handler\AbstractProcessingHandler;

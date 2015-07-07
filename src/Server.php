@@ -1,13 +1,14 @@
 <?php
 
-namespace Mbrevda\LogServer;
+namespace Mbrevda\MonologServer;
 
 use \HTTPServer;
+use \Mbrevda\MonologServer\RequestHandler;
 
 class Server extends HTTPServer
 {
 
-    public function __construct($requestHandler)
+    public function __construct(RequestHandler $requestHandler)
     {
         parent::__construct(['port' => 33000]);
         $this->requestHandler = $requestHandler;
@@ -16,20 +17,20 @@ class Server extends HTTPServer
     public function route_request($request)
     {
         $this->requestHandler->__invoke($request);
-        
+
         if (!$this->isPost($request)) {
             return $this->notFound();
         }
-        
-        
+
+
         return $this->ok();
     }
-    
+
     public function request_done($request)
     {
 
     }
-    
+
     public function listening()
     {
 
@@ -44,7 +45,7 @@ class Server extends HTTPServer
     {
         return $this->text_response(200, 'OK');
     }
-    
+
     private function notFound()
     {
         return $this->text_response(404, 'Not Found');

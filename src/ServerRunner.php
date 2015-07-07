@@ -1,19 +1,21 @@
 <?php
 
-namespace Mbrevda\LogServer;
+namespace Mbrevda\MonologServer;
 
-use \Mbrevda\LogServer\Server;
-use \Mbrevda\LogServer\RequestHandler;
+use \Mbrevda\MonologServer\Server;
+use \Mbrevda\MonologServer\RequestHandler;
 
 class ServerRunner
 {
     protected $server;
 
+    public function __construct(Server $server)
+    {
+        $this->server = $server;
+    }
+
     public function __invoke()
     {
-        $rHandler = new RequestHandler;
-
-        $server = new Server($rHandler);
-        $server->run_forever();
+        $this->server->run_forever();
     }
 }

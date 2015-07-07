@@ -1,18 +1,20 @@
 <?php
 
-namespace Mbrevda\LogServer;
+namespace Mbrevda\MonologServer;
 
-use \Mbrevda\LogServer\Server;
-use \Mbrevda\LogServer\RequestHandler;
-use Aura\Cli\CliFactory;
+use \Mbrevda\MonologServer\Server;
+use \Mbrevda\MonologServer\RequestHandler;
+use Aura\Cli\Context;
+use Aura\Cli\Stdio;
 
 class RequestHandler
 {
-    public function __construct()
-    {
-        $cli_factory    = new CliFactory;
-        $this->context  = $cli_factory->newContext($GLOBALS);
-        $this->stdio    = $cli_factory->newStdio();
+    public function __construct(
+        Context $context,
+        Stdio $stdio
+    ) {
+        $this->context  = $context;
+        $this->stdio    = $stdio;
     }
 
     public function __invoke($request)

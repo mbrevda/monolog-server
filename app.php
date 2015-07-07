@@ -1,10 +1,6 @@
+#!/usr/bin/env php
 <?php
 
-include __DIR__ . '/vendor/autoload.php';
- date_default_timezone_set('UTC');
-ini_set('display_errors', false);
-error_reporting(-1);
-
-$server = new Mbrevda\LogServer\ServerRunner;
-
-$server();
+if (php_sapi_name() == "cli") {
+    require __DIR__ . '/cli/console.php';
+}

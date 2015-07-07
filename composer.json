@@ -10,11 +10,20 @@
     "minimum-stability": "dev",
     "require": {
         "youngj/httpserver": "dev-master",
-        "aura/cli": "2.x-dev"
+        "aura/cli-kernel": "2.x-dev"
     },
     "autoload": {
         "psr-4": {
-            "Mbrevda\\LogServer\\": "src/"
+            "Mbrevda\\MonologServer\\_Config\\": "config/",
+            "Mbrevda\\MonologServer\\": "src/"
         }
-    }
+    },
+    "extra": {
+      "aura": {
+          "type": "library",
+          "config": {
+              "common": "Mbrevda\\MonologServer\\_Config\\Common"
+          }
+      }
+  }
 }
