@@ -1,0 +1,20 @@
+{
+    "name": "mbrevda/log-server",
+    "description": "A simple and lightweight log server that receives and displays logs from Monolog. Useful during development.",
+    "authors": [
+        {
+            "name": "Moshe Brevda",
+            "email": "mbrevda@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "youngj/httpserver": "dev-master",
+        "aura/cli": "2.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mbrevda\\LogServer\\": "src/"
+        }
+    }
+}
