@@ -1,5 +1,5 @@
 {
-    "name": "mbrevda/log-server",
+    "name": "mbrevda/monolog-server",
     "description": "A simple and lightweight log server that receives and displays logs from Monolog. Useful during development.",
     "authors": [
         {
